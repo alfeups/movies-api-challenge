@@ -49,7 +49,7 @@ mvn spring-boot:run
 <br>
 
 The application will start on <b>port 8080</b> by default. 
-You can configure the port in the application.yml file.
+You can configure the port in the <i>application.yml</i> file.
 
 3. API Documentation
 
@@ -58,7 +58,6 @@ Swagger UI is integrated to provide API documentation. You can access it by navi
 ```
 http://localhost:8080/swagger-ui.html
 ```
-<br>
 
 <h2> Project Structure </h2>
 
@@ -67,6 +66,14 @@ The project follows the Hexagonal Architecture pattern to separate concerns into
 <li>Adapters: Web and Database - Contains the web controllers and Manages data storage and database interactions.
 <li>Core/Domain: Houses the application logic and use cases and defines the core business domain and entities.
 <li>Config: Contains Spring Boot configuration classes.
+
+<h2> Test Coverage </h2>
+
+After building the application, you can check code coverage by looking at the file <i>index.html</i> file located in:
+
+```
+target/site/jacoco/index.html
+```
 
 <h2> Docker Image </h2>
 
