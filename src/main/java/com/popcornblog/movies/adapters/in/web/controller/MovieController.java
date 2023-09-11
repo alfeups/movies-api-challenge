@@ -8,6 +8,7 @@ import com.popcornblog.movies.adapters.in.web.mappers.MessageDtoMapper;
 import com.popcornblog.movies.adapters.in.web.mappers.MovieDtoMapper;
 import com.popcornblog.movies.core.ports.in.*;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("v1/api/movies")
 public class MovieController {
 
@@ -27,26 +29,8 @@ public class MovieController {
     private final GetMoviesByDateUseCasePort getMoviesByDateUseCasePort;
     private final UpdateMovieUseCasePort updateMovieUseCasePort;
     private final DeleteMovieUseCasePort deleteMovieUseCasePort;
-
     private final MovieDtoMapper dtoMapper;
     private final MessageDtoMapper messageDtoMapper;
-
-    public MovieController(CreateMovieUseCasePort createMovieUseCasePort,
-                           GetMovieByIdUseCasePort getMovieByIdUseCasePort,
-                           GetMoviesByDateUseCasePort getMoviesByDateUseCasePort,
-                           UpdateMovieUseCasePort updateMovieUseCasePort,
-                           DeleteMovieUseCasePort deleteMovieUseCasePort,
-                           MovieDtoMapper dtoMapper,
-                           MessageDtoMapper messageDtoMapper) {
-        this.createMovieUseCasePort = createMovieUseCasePort;
-        this.getMovieByIdUseCasePort = getMovieByIdUseCasePort;
-        this.getMoviesByDateUseCasePort = getMoviesByDateUseCasePort;
-        this.updateMovieUseCasePort = updateMovieUseCasePort;
-        this.deleteMovieUseCasePort = deleteMovieUseCasePort;
-        this.dtoMapper = dtoMapper;
-        this.messageDtoMapper = messageDtoMapper;
-    }
-
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.OK)

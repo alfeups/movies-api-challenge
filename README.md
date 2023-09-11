@@ -49,7 +49,7 @@ mvn spring-boot:run
 <br>
 
 The application will start on <b>port 8080</b> by default. 
-You can configure the port in the application.properties file.
+You can configure the port in the application.yml file.
 
 3. API Documentation
 
@@ -58,7 +58,7 @@ Swagger UI is integrated to provide API documentation. You can access it by navi
 ```
 http://localhost:8080/swagger-ui.html
 ```
-<br><br>
+<br>
 
 <h2> Project Structure </h2>
 
@@ -78,6 +78,9 @@ You can pull the image and run it as a Docker container:
 
 ```
 docker pull alfeups/movies:latest
+```
+
+```
 docker run -p 8080:8080 alfeups/movies:latest
 ```
 
